@@ -7,6 +7,7 @@ public class Controller {
 	Produtos prod1 = new Produtos("XIAOMI", "Importado");
 	
 	Produtos prod2 = new Produtos("XIAOMI", "Nacional", "REDMI 4x", "Celular");
+	
 	public void cadastrar() {
 				
 		
@@ -31,6 +32,23 @@ public class Controller {
 		
 	}//fecha cadastrar	
 	
+	public void gerarDevolucao() {
+		//devolução Importados		
+		prod1.setQtdDevolucao( Integer.parseInt(JOptionPane.showInputDialog("Devolução de importados\n"
+				+ "Quantidade devolvida?")) );
+		
+		prod1.setQtdDisponivel(prod1.getQtdTotal() - prod1.getQtdDevolucao());
+		JOptionPane.showMessageDialog(null, "Quantidade restante: " + prod1.getQtdDisponivel(), "Resultado", JOptionPane.INFORMATION_MESSAGE);
+		
+		//devolução Nacionais
+		prod2.setQtdDevolucao( Integer.parseInt(JOptionPane.showInputDialog("Devolução de importados\n"
+				+ "Quantidade devolvida?")) );
+		
+		prod2.setQtdDisponivel(prod2.getQtdTotal() - prod2.getQtdDevolucao());
+		JOptionPane.showMessageDialog(null, "Quantidade restante: " + prod2.getQtdDisponivel(), "Resultado", JOptionPane.INFORMATION_MESSAGE);
+		
+	}//fecha gerarDevolucao
+	
 	public void mostrar() {
 		JOptionPane.showMessageDialog(null, "Marca: " + prod1.marca +""
 				+ "\nModelo: " + prod1.getModelo() + ""
@@ -39,6 +57,6 @@ public class Controller {
 										+ "\nOrigem: " + prod1.getOrigem() + ""
 												+ "\nValor: " + prod1.getValor() + ""
 														+ "\nQuantidade: " + prod1.getQtdTotal() + ""
-																+ "\nQuantidade disponível: " + prod1.getQtdDisponivel(), "Importado", JOptionPane.INFORMATION_MESSAGE);
+																+ "\nQuantidade disponível: " + prod1.getQtdDisponivel(), "Resultado", JOptionPane.INFORMATION_MESSAGE);
 	}
 }//fecha Controller
