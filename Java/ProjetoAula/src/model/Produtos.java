@@ -11,7 +11,7 @@ public class Produtos {
 	private String modelo, dataFabricacao, tipo, origem;
 	public String marca;
 	protected float valor;
-	private int qtdTotal, qtdDisponivel;
+	private int qtdTotal, qtdDisponivel, qtdDevolucao;
 	
 	/**
 	 * 
@@ -19,6 +19,11 @@ public class Produtos {
 	 * @param marca 
 	 * @param origem 
 	 */
+	
+	public Produtos() {
+		
+	}
+	
 	public Produtos(String marca, String origem) {
 		this.marca = marca;
 		setOrigem(origem);
@@ -93,5 +98,13 @@ public class Produtos {
 		this.qtdDisponivel = qtdDisponivel;
 	}
 	
+	public int getQtdDevolucao() {
+		return qtdDevolucao;
+	}
 	
-}
+	public void setQtdDevolucao(int qtdDevolucao) {
+		this.qtdDevolucao = qtdDevolucao;
+	}
+	
+	
+}//fecha Produtos
